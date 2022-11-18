@@ -17,17 +17,22 @@ import FlagIcon from "@mui/icons-material/Flag";
 import HelpIcon from "@mui/icons-material/Help";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
 import { HorizontalRule } from "@mui/icons-material";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Container = styled.div`
 	flex: 1;
-	background-color: black;
-	height: 100vh;
-	color: white;
+	background-color:${({theme})=>theme.bg};
+	height: 125vh;
+	color:${({theme})=>theme.text};
 	font-size: 14px;
+	position: sticky;
+	top: 0;
+	
 `;
 //here menu become 1 units
 
 const Wrapper = styled.div`
-	padding: 18px 26px;
+	padding: 5px 30px;
+
 `;
 const Img = styled.img`
 	height: 25px;
@@ -44,18 +49,37 @@ const Logo = styled.div`
 const Item = styled.div`
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 15px;
 	cursor: pointer;
-	padding: 7.5px 0px;
+	padding: 5px 0px;
+
 
 `;
 //padding top and bottom 7.5px and left and right is 0px
 
 const HorizondalLine=styled.hr`
 margin: 15px 0px;
-border: 0.5px solid #373737;
+border: 0.5px solid ${({theme})=>theme.soft};
 `
-const Menu = () => {
+const Login=styled.div`
+font-size: 12px;
+`
+const Button=styled.button`
+padding: 5px 15px;
+background-color:transparent;
+border:1px solid blue;
+color:blue;
+border-radius:3px;
+font-weight:500;
+margin-top: 10px;
+cursor: pointer;
+display: flex;
+	align-items: center;
+	gap: 5px;
+`
+
+// get props in here
+const Menu = ({darkMode,setDarkMode}) => {
 	return (
 		<Container>
 			<Wrapper>
@@ -90,13 +114,21 @@ const Menu = () => {
 					Music
 				</Item>
 				<HorizondalLine/>
+				<Login>
+					Sign in to like vidoes,comment, and subscribe.
+					<Button>
+						<AccountCircleIcon/>
+						SIGN IN
+					</Button>
+				</Login>
+				<HorizondalLine/>
 				<Item>
 					<SportsBasketballIcon/>
 					Sports
 				</Item>
 				<Item>
 					<SportsEsportsIcon/>
-					Gaming's 
+					Gaming
 				</Item>
 				<Item>
 					<MovieCreationIcon/>
@@ -110,7 +142,7 @@ const Menu = () => {
 					<LiveTvIcon/>
 					Live
 				</Item>
-				<HorizontalRule/>
+				<HorizondalLine/>
 				<Item>
 					<SettingsIcon/>
 					Settings
@@ -123,7 +155,7 @@ const Menu = () => {
 					<HelpIcon/>
 					Help
 				</Item>
-				<Item>
+				<Item onClick={()=>{setDarkMode(!darkMode)}}>
 					<SettingsBrightnessIcon/>
 					Light Mode
 				</Item>
