@@ -18,6 +18,7 @@ import HelpIcon from "@mui/icons-material/Help";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
 import { HorizontalRule } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Link } from "react-router-dom";
 const Container = styled.div`
 	flex: 1;
 	background-color:${({theme})=>theme.bgLighter};
@@ -87,13 +88,18 @@ margin-bottom: 20px;
 `
 // get props in here
 const Menu = ({darkMode,setDarkMode}) => {
+	
 	return (
 		<Container>
 			<Wrapper>
+
+				<Link to="/" style={{textDecoration:"none",color:"inherit"}}>
 				<Logo>
 					<Img src={YoutubeLogo} />
 					YouTube
 				</Logo>
+
+				</Link>
 				<Item>
 					<HomeIcon />
 					Home

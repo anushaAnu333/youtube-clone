@@ -36,6 +36,8 @@ const Input=styled.input`
 border: none;
 /* to avoid white color inside the input box */
 background-color: transparent;
+width:100%;
+outline: none;
 
 
 `
