@@ -20,8 +20,8 @@ import { HorizontalRule } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 const Container = styled.div`
 	flex: 1;
-	background-color:${({theme})=>theme.bg};
-	height: 125vh;
+	background-color:${({theme})=>theme.bgLighter};
+	height: 135vh;
 	color:${({theme})=>theme.text};
 	font-size: 14px;
 	position: sticky;
@@ -78,6 +78,13 @@ display: flex;
 	gap: 5px;
 `
 
+const Title=styled.h2`
+font-size: 14px;
+font-weight: 500;
+color:#aaaaaa;
+margin-bottom: 20px;
+
+`
 // get props in here
 const Menu = ({darkMode,setDarkMode}) => {
 	return (
@@ -122,6 +129,9 @@ const Menu = ({darkMode,setDarkMode}) => {
 					</Button>
 				</Login>
 				<HorizondalLine/>
+				<Title>
+					BEST OF YOUTUBE
+				</Title>
 				<Item>
 					<SportsBasketballIcon/>
 					Sports
