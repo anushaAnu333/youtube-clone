@@ -50,7 +50,7 @@ const ChannelText=styled.h2`
 `
 const Info=styled.div`
     font-size: 14px;
-    color:${({theme})=>theme.textSoft}
+    color:${({theme})=>theme.textSoft};
 `
 const Card = () => {
   return (
