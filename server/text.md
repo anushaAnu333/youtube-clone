@@ -23,3 +23,19 @@ email
 password,img,subscriber,subscribeduser(we are taking array and in this array we are having all the subscribed users)when we create our channel its going to be empty string and when we subscribe in the channel is going to be that channels user id
 
 timestamp-its gonna create creation and upadted date of this user
+
+create file video.js
+videoscheme---userid,title,description
+commentschema
+
+another folder-router
+
+another folder controller
+we make crud operation in controller
+
+
+req-what we are getting from user
+res-what we are sending
+test is working..that means we sent request
+
+to visible the res on screen put res.json("..")
