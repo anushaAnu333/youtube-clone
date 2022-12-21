@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
@@ -10,35 +10,20 @@ const Container = styled.div`
 `;
 
 
-const HomePage = () => {
-	const [video,setVideos]=useState([])
-	useEffsmm(() => {
-	 
-	}, [])
-	
+const HomePage = ({type}) => {
+	const [videos,setVideos]=useState([])
+	useEffect(() => {
+		const fetchVideos = async () => {
+		  const res = await axios.get(`/videos/${type}`);
+		  setVideos(res.data);
+		};
+		fetchVideos();
+	  }, [type]);
 	return (
 		<Container>
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-       <Card /> 
-       <Card />
-        <Card />
-         <Card /> 
-         <Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
-			<Card />
+			  {videos.map((video) => (
+        <Card key={video._id} video={video}/>
+      ))}
 		</Container>
 	);
 };
