@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Card from "../components/Card";
 
@@ -10,6 +11,11 @@ const Container = styled.div`
 
 
 const HomePage = () => {
+	const [video,setVideos]=useState([])
+	useEffsmm(() => {
+	 
+	}, [])
+	
 	return (
 		<Container>
 			<Card />
