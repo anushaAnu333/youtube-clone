@@ -39,3 +39,15 @@ res-what we are sending
 test is working..that means we sent request
 
 to visible the res on screen put res.json("..")
+
+
+
+
+
+
+for password safety-bycrptjs library
+var salt = bcrypt.genSaltSync(10);
+var hash = bcrypt.hashSync("B4c0/\/", salt);
+"B4c0/\/"-instead of this we write what i want to encrypt
+
+const user=await UserModel.findOne({name:req.body.name})---it will look in to user collection try to find one which has name
